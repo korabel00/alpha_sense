@@ -22,10 +22,18 @@ dependencies {
     testImplementation("org.assertj:assertj-core:3.21.0")
     implementation("io.qameta.allure:allure-junit5:2.13.2")
     compileOnly("org.projectlombok:lombok:1.18.22")
+    testImplementation("io.rest-assured:rest-assured:4.4.0")
+    testImplementation("org.assertj:assertj-core:3.22.0")
+    implementation("org.projectlombok:lombok:1.18.8")
+    annotationProcessor("org.projectlombok:lombok:1.18.8")
+    testImplementation("org.projectlombok:lombok:1.18.8")
+    testAnnotationProcessor("org.projectlombok:lombok:1.18.8")
+    implementation("com.google.code.gson:gson:2.8.5")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.9.8")
 }
 
 tasks.test {
- //   finalizedBy("allureReport")
+    finalizedBy("allureReport")
     val tag: String by project
     val baseUrl: String by project
 
